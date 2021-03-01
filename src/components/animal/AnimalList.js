@@ -1,4 +1,4 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useHistory } from "react";
 import { AnimalContext } from "./AnimalProvider";
 import { LocationContext } from "../locations/LocationProvider"
 import { CustomerContext } from "../customers/CustomerProvider"
@@ -20,19 +20,20 @@ export const AnimalList = () => {
     .then(getAnimals)
 }, [])
 
-  return (
-    <>
-       return (
-        <div className="animals">
-            {animals.map(animal => {
-    const owner = customers.find(c => c.id === animal.customerId)
-    const clinic = locations.find(l => l.id === animal.locationId)
+const history = useHistory()
 
-    return <Animal key={animal.id}
-                location={clinic}
-                customer={owner}
-                animal={animal} />
-})}
+return (
+    <>
+        <h2>Animals</h2>
+		<button onClick={() => {history.push("/animals/create")}}>
+            Add Animal
+        </button>
+        <div className="animals">
+        {
+			animals.map(animal => {
+				return <AnimalCard key={animal.id} animal={animal} />
+			})
+        }
         </div>
     </>
   );
