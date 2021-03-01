@@ -9,6 +9,7 @@ import {CustomerList } from "./customers/CustomerList"
 import { CustomerProvider } from "./customers/CustomerProvider";
 import {EmployeeList} from "./employees/EmployeeList"
 import { EmployeeProvider } from "./employees/EmployeeProvider";
+import {AnimalForm} from "./animal/AnimalForm"
 
 export const ApplicationViews = () => {
   return (
