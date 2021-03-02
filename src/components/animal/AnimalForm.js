@@ -9,7 +9,7 @@ export const AnimalForm = () => {
   const { addAnimal } = useContext(AnimalContext)
   const { locations, getLocations } = useContext(LocationContext)
   const { customers, getCustomers } = useContext(CustomerContext)
-debugger
+
   /*
   With React, we do not target the DOM with `document.querySelector()`. Instead, our return (render) reacts to state or props.
 
