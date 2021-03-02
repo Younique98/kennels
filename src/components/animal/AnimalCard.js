@@ -2,12 +2,12 @@ import React from "react"
 import "./Animal.css"
 
 
-export const AnimalCard = ({ animalProp, ownerOfAnimal, located }) => (
+export const AnimalCard = ({ animalProp, location, customer  }) => (
     <section className="animal">
-        {console.log(animalProp)}
+         {/* {console.log(customer)} */}
         <h3 className="animal__name">Pet name: {animalProp.name}</h3>
-        <address className="animal_breed">Breed: {animalProp.breed}</address>
-        <address className="animal_owner">Owner: {ownerOfAnimal.name}</address>
-        <address className="animal_location">Located: {located.name}</address>
+        <div className="animal_breed">Breed: {animalProp.breed}</div>
+        <div className="animal_location">Located: {location.name}</div>
+        <div className="animal_owner">Owner: {customer.name}</div>
     </section>
 )
