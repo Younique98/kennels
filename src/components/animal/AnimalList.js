@@ -25,15 +25,18 @@ const history = useHistory()
 return (
     <>
         <h2>Animals</h2>
+        <div className="animals">
 		<button onClick={() => {history.push("/animals/create")}}>
             Add Animal
         </button>
-        <div className="animals">
+        
         {
-			animals.map(animal => {
-				return <AnimalCard key={animal.id} animal={animal} />
+        animals.map(animal => {
+        const ownerOfAnimal = customers.find(petCustomer => petCustomer.id === animal.customerId)
+        const located = locations.find(location => location.id === animal.locationId)
+				return <AnimalCard key={animal.id} animalProp={animal} located={located} ownerOfAnimal={ownerOfAnimal}/>
 			})
-        }
+    }
         </div>
     </>
   );

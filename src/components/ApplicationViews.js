@@ -25,6 +25,7 @@ export const ApplicationViews = () => {
     <LocationProvider>
         <CustomerProvider>
             <Route exact path="/animals/create">
+              <AnimalList />
                 <AnimalForm />
             </Route>
         </CustomerProvider>
