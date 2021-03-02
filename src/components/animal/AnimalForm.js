@@ -9,7 +9,7 @@ export const AnimalForm = () => {
   const { addAnimal } = useContext(AnimalContext)
   const { locations, getLocations } = useContext(LocationContext)
   const { customers, getCustomers } = useContext(CustomerContext)
-
+debugger
   /*
   With React, we do not target the DOM with `document.querySelector()`. Instead, our return (render) reacts to state or props.
 
@@ -25,6 +25,7 @@ export const AnimalForm = () => {
 
   const history = useHistory();
 
+  
   /*
   Reach out to the world and get customers state
   and locations state on initialization.
@@ -42,8 +43,12 @@ export const AnimalForm = () => {
     /* Animal is an object with properties.
     Set the property to the new value
     using object bracket notation. */
-    newAnimal[event.target.id] = event.target.value
-    // update state
+    let selectedValue = event.target.value;
+    if(event.target.id.includes("Id")) {
+      selectedValue = parseInt(selectedValue)
+    }
+      newAnimal[event.target.id] = selectedValue
+    // // update state
     setAnimal(newAnimal)
   }
 
@@ -59,16 +64,20 @@ export const AnimalForm = () => {
       //Invoke addAnimal passing the new animal object as an argument
       //Once complete, change the url and display the animal list
 
-      const newAnimal = {
-        name: animal.name,
-        breed: animal.breed,
-        locationId: locationId,
-        customerId: customerId
-      }
-      addAnimal(newAnimal)
+      // const newAnimal = {
+      //   name: animal.name,
+      //   breed: animal.breed,
+      //   locationId: locationId,
+      //   customerId: customerId
+      // }
+      addAnimal(animal)
         .then(() => history.push("/animals"))
     }
   }
+    
+
+
+
     return (
       <form className="animalForm">
         <h2 className="animalForm__title">New Animal</h2>
