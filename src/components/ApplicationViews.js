@@ -20,15 +20,20 @@ export const ApplicationViews = () => {
       </Route>
 
       {/* Render the animal list when http://localhost:3000/animals */}
-      <CustomerProvider>
-        <LocationProvider>
-          <AnimalProvider>
-            <Route path="/animals">
-              <AnimalList />
-            </Route>
-          </AnimalProvider>
-        </LocationProvider>
-      </CustomerProvider>
+      <AnimalProvider>
+  <LocationProvider>
+    <CustomerProvider>
+      {/* Note the addition of "exact" now that we have an additional route with "/animals" in it below this Route: "/animals/create" */}
+      <Route exact path="/animals">
+        <AnimalList />
+      </Route>
+
+      <Route path="/animals/create">
+        <AnimalForm />
+      </Route>
+    </CustomerProvider>
+  </LocationProvider>
+</AnimalProvider>
 
       <Route path="/locations">
         <LocationProvider>
@@ -43,9 +48,11 @@ export const ApplicationViews = () => {
       </Route>
 
       <Route path="/employees">
+        <LocationProvider>
         <EmployeeProvider>
         <EmployeeList />
         </EmployeeProvider>
+        </LocationProvider>
       </Route>
     </>
   );
