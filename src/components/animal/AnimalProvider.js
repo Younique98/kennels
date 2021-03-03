@@ -27,6 +27,12 @@ export const AnimalProvider = (props) => {
   const getAnimalById = (id) => {
     return fetch(`http://localhost:8088/animals/${id}?_expand=location&_expand=customer`)
       .then(res => res.json())
+};
+const releaseAnimal = animalId => {
+  return fetch(`http://localhost:8088/animals/${animalId}`, {
+      method: "DELETE"
+  })
+      .then(getAnimals)
 }
 
   /*
@@ -40,7 +46,8 @@ export const AnimalProvider = (props) => {
       animals: animals, 
       getAnimals: getAnimals,
       addAnimal: addAnimal,
-      getAnimalById: getAnimalById
+      getAnimalById: getAnimalById,
+      releaseAnimal: releaseAnimal
       // animals, getAnimals
     }}>
       {props.children}
