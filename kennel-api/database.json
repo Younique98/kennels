@@ -77,11 +77,13 @@
     {
       "email": "openthedoor@gmail.com",
       "name": "Erica Thompson",
+      "address": "1234 somewhere land",
       "id": 6
     },
     {
       "email": "younique9820@gmail.com",
       "name": "Erica Thompson",
+      "address": "1245 over the moon st",
       "id": 7
     }
   ],
