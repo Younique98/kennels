@@ -61,27 +61,42 @@
     {
       "id": 1,
       "name": "Fannah Hall",
-      "address": "5002 Thestnut Ct"
+      "address": "5002 Thestnut Ct",
+      "email": "fanhall@gmail.com"
     },
     {
       "id": 2,
       "name": "Hannah Hall",
-      "address": "7002 Dhestnut Ct"
+      "address": "7002 Dhestnut Ct",
+      "email": "hanhall@gmail.com"
     },
     {
       "id": 3,
       "name": "Dannah Hall",
-      "address": "9002 Chestnut Ct"
+      "address": "9002 Chestnut Ct",
+      "email": "danhall@gmail.com"
     },
     {
       "id": 4,
-      "name": "Dannah Hall",
-      "address": "9002 Chestnut Ct"
+      "name": "Pannah Hall",
+      "address": "9002 Chestnut Ct",
+      "email": "panhall@gmail.com"
     },
     {
       "id": 5,
-      "name": "Dannah Hall",
-      "address": "9002 Chestnut Ct"
+      "name": "Eannah Hall",
+      "address": "9002 Chestnut Ct",
+      "email": "eanhall@gmail.com"
+    },
+    {
+      "email": "openthedoor@gmail.com",
+      "name": "Erica Thompson",
+      "id": 6
+    },
+    {
+      "email": "younique9820@gmail.com",
+      "name": "Erica Thompson",
+      "id": 7
     }
   ],
   "employees": [
