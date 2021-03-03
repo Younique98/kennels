@@ -2,15 +2,16 @@ import React from "react";
 import { Route } from "react-router-dom";
 import { Home } from "../Home";
 import { AnimalProvider } from "./animal/AnimalProvider";
-import { AnimalList } from "./animal/AnimalList"
-import { LocationList } from "./locations/LocationList"
+import { AnimalList } from "./animal/AnimalList";
+import { LocationList } from "./locations/LocationList";
 import { LocationProvider } from "./locations/LocationProvider";
-import {CustomerList } from "./customers/CustomerList"
+import {CustomerList } from "./customers/CustomerList";
 import { CustomerProvider } from "./customers/CustomerProvider";
-import {EmployeeList} from "./employees/EmployeeList"
+import {EmployeeList} from "./employees/EmployeeList";
 import { EmployeeProvider } from "./employees/EmployeeProvider";
-import {AnimalForm} from "./animal/AnimalForm"
-import {AnimalDetail} from "./animal/AnimalDetail"
+import {AnimalForm} from "./animal/AnimalForm";
+import {AnimalDetail} from "./animal/AnimalDetail";
+import { AnimalSearch } from "./animal/AnimalSearch"
 
 export const ApplicationViews = () => {
   return (
@@ -25,15 +26,17 @@ export const ApplicationViews = () => {
   <LocationProvider>
     <CustomerProvider>
       {/* Note the addition of "exact" now that we have an additional route with "/animals" in it below this Route: "/animals/create" */}
-      <Route exact path="/animals">
-        <AnimalList />
-      </Route>
+      
 
 
       <Route path="/animals/create">
         <AnimalForm />
       </Route>
-
+<Route exact path="/animals">
+     <AnimalSearch />
+    <AnimalList />
+   
+</Route>
 
       <Route exact path="/animals/detail/:animalId(\d+)">
     <AnimalDetail />
@@ -41,6 +44,9 @@ export const ApplicationViews = () => {
     <Route path="/animals/edit/:animalId(\d+)">
     <AnimalForm />
 </Route>
+
+
+
     </CustomerProvider>
   </LocationProvider>
 </AnimalProvider>
