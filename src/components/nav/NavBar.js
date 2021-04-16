@@ -20,6 +20,7 @@ export const NavBar = (props) => {
             <li className="navbar__item">
                 <Link className="navbar__link" to="/employees">Employees</Link>
             </li>
+            
         </ul>
     )
 }
