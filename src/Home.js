@@ -3,7 +3,7 @@ import { PropsAndState } from "../src/components/PropsAndState"
 
 export const Home = () => (
     <>
-    <div class="kennelHomePage">
+    <div className="kennelHomePage">
         <h1>Nashville Kennels</h1>
         <h2>Loving care when you're not there.</h2>
 
