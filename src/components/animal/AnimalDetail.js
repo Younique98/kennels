@@ -37,6 +37,7 @@ export const AnimalDetail = () => {
       {/* What's up with the question mark???? See below.*/}
       <div className="animal__location">Location: {animal.location?.name}</div>
       <div className="animal__owner">Customer: {animal.customer?.name}</div>
+      <div className="animal__status">Status: {animal.status}</div>
       <button onClick={handleRelease}>Release Animal</button>
       <button onClick={() => {
      history.push(`/animals/edit/${animal.id}`)
